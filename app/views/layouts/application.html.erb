@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TakeHomeChallenge</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <nav class="navbar navbar-default navbar-transparent">
+      <%= link_to("Stitch Fix Clearance Tool", root_path, class: "navbar-brand")%>
+      <ul class="nav navbar-nav">
+        <li <%= "class=active" if current_controller?("clearance_batches") %>>
+          <%= link_to("Clearance Batches", clearance_batches_path)%>
+        </li>
+        <li <%= "class=active" if current_controller?("items")%>>
+          <%= link_to("Items", items_path)%>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div class="row">
+
+  <%- if flash[:notice] -%>
+      <div class="alert alert-info" role="alert">
+        <%= flash[:notice].html_safe %>
+      </div>
+  <%- end -%>
+  <%- if flash[:alert] -%>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:alert].html_safe %>
+      </div>
+  <%- end -%>
+  </div>
+  <div class="row">
+  <%= yield %>
+</div>
+  </div>
+
+</body>
+</html>

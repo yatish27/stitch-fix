@@ -1,0 +1,28 @@
+.btn-red {
+  color: white;
+  background-color: $base-color;
+}
+
+.btn-green {
+  color: white;
+  background-color: #48B91D;
+}
+
+.btn-border-red {
+  color: $base-color;
+  border: 1px solid $base-color;
+  background-color: white;
+}
+
+.navbar-transparent {
+  background-color: white;
+  border-color: white;
+}
+
+.space-4 {
+  margin-top: 20px;
+}
+
+.centre {
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h2 class="inline">Clearance Batches</h2>
+    <%= link_to("New", new_clearance_batch_path, class: 'btn btn-red pull-right space-4')%>
+  </div>
+</div>
+
+<% if @clearance_batches.present? %>
+    <table class="table table-striped clearance_batches">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Number of items clearanced</th>
+        <th>Date clearanced</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <%- @clearance_batches.each do |clearance_batch| -%>
+          <tr>
+            <td><%=link_to("Clearance Batch #{clearance_batch.id}", clearance_batch_path(clearance_batch)) %></td>
+            <td><%= @items_count[clearance_batch.id] || 0 %></td>
+            <td><%= l(clearance_batch.updated_at, format: :short) if clearance_batch.complete? %></td>
+            <td><%= clearance_batch.display_status %></td>
+          </tr>
+      <%- end -%>
+      </tbody>
+    </table>
+<% else %>
+    <div class="alert alert-info" role="alert">
+      There are no Clearance Batches.
+    </div>
+<% end %>

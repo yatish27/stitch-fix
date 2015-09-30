@@ -1,0 +1,8 @@
+log/*.log
+*.sw?
+.DS_Store
+.bundle
+tmp
+db/*.sqlite3
+.idea/
+coverage/

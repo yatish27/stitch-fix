@@ -1,0 +1,32 @@
+<h2>Clearance Batch <%= @clearance_batch.id%></h2>
+</br>
+
+<% if @clearance_batch.complete? %>
+    <%= render("report")%>
+<% else %>
+    <%= render("item_form")%>
+<% end %>
+
+<table class="table table-striped items">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Color</th>
+    <th>Price of Clearance</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @clearance_batch.items.present?%>
+      <%- @clearance_batch.items.each do |item| -%>
+          <tr>
+            <td>Item Id <%= item.id %></td>
+            <td><%= item.color %></td>
+            <td><%= number_to_currency(item.price_sold) %></td>
+          </tr>
+      <%- end -%>
+  <%- end -%>
+  </tbody>
+</table>
+
+
+

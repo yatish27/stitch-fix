@@ -1,0 +1,31 @@
+// Few explicit overides for bootstarp
+
+.navbar-brand {
+  padding-left: 0;
+}
+
+.navbar-default {
+  .navbar-nav {
+    > li.active {
+      > a {
+        background-color: white;
+        border-bottom: 2px solid $base-color;
+      }
+    }
+
+    > li {
+      > a:hover {
+        color: #555;
+        background-color: $hover-background;
+      }
+    }
+  }
+}
+
+h2.inline {
+  display: inline-block;
+}
+
+.panel-default {
+  min-height: 100px;
+}

@@ -1,0 +1,11 @@
+<%= form_tag(add_item_clearance_batch_path(@clearance_batch), class: 'form-inline space-4 pull-left', role: 'form') do %>
+    <div class="form-group">
+      <%= label_tag 'item_id', 'Item Id:' %>
+      <%= number_field_tag 'item_id', 'Enter the Item Id',  class: 'form-control' %>
+    </div>
+    <%= button_tag 'Submit', class: 'btn btn-red' %>
+<% end %>
+<%= button_to "Finish", clearance_batch_path(@clearance_batch),
+              method: :patch,
+              params: { 'clearance_batch[complete]' => true },
+              class: "btn btn-green pull-right space-4" %>

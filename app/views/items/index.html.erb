@@ -1,0 +1,28 @@
+<h2>Items</h2>
+
+<%= render("filter_form") %>
+
+<div class="pull-right">
+  Total:<%=@items.total_count%>
+</div>
+
+<table class="table table-striped items">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Status</th>
+    <th>Price Sold</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%- @items.each do |item| -%>
+      <tr>
+        <td>Item Id <%= item.id %></td>
+        <td><%= item.status %></td>
+        <td><%= number_to_currency(item.price_sold) %></td>
+      </tr>
+  <%- end -%>
+  </tbody>
+</table>
+
+<%= paginate @items %>

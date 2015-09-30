@@ -1,0 +1,21 @@
+<div class="centre">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="inline">New Clearance Batch</h2>
+    </div>
+  </div>
+
+  <%= form_tag(create_by_file_clearance_batches_path, multipart: true, class: 'form-inline space-4', role: 'form') do %>
+      <div class="form-group">
+        <%= label_tag 'csv_batch_file', 'Select batch file:' %>
+        <%= file_field_tag 'csv_batch_file', class: 'form-control', required: :required %>
+      </div>
+      <%= button_tag 'upload batch file', class: 'btn btn-red'%>
+  <% end %>
+
+  <div class="space-4">
+    OR
+  </div>
+
+  <%= link_to 'Add Items Manually', clearance_batches_path, method: :post, class: 'btn btn-large btn-red space-4'%>
+</div>

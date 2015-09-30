@@ -1,5 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/yatish27/stitch-fix/badges/gpa.svg)](https://codeclimate.com/github/yatish27/stitch-fix)
-[Heroku](https://agile-sierra-3006.herokuapp.com/clearance_batches/1)
+
+
+Live version: [Heroku](https://agile-sierra-3006.herokuapp.com/clearance_batches/1)
 
 We need to clearance inventory from time to time.  Certain items don't sell through to our clients, so every month, we collect certain unsold items and sell them to a third party vendor for a portion of their wholesale price.
 
